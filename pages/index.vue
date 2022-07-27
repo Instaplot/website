@@ -2,7 +2,8 @@
 <template>
   <el-container>
     <el-main>
-      <div align="center">
+      <div class="book-info">
+        <h1 class="info-heading">Get information about books with ease</h1>
         <el-input
           v-model="bookInput"
           type="text"
@@ -11,21 +12,26 @@
           class="book-input"
         >
         </el-input>
-        <el-button type="primary" @click="getBookInfo">Submit</el-button>
+        <el-button id="submit-button" type="primary" @click="getBookInfo"
+          >Submit</el-button
+        >
         <div v-if="state == 'info'">
-          <h3>Book Title</h3>
+          <h3 v-if="book.title">Book Title</h3>
           {{ book.title }}
           <br />
-          <el-image :src="book.thumbnailURL"></el-image>
-          <h3>Authors</h3>
+          <el-image
+            v-if="book.thumbnailURL"
+            :src="book.thumbnailURL"
+          ></el-image>
+          <h3 v-if="book.authors">Authors</h3>
           <ul>
             <li v-for="author in book.authors">{{ author }}</li>
           </ul>
-          <h3>Publisher</h3>
+          <h3 v-if="book.publisher">Publisher</h3>
           {{ book.publisher }}
-          <h3>Published Date</h3>
+          <h3 v-if="book.publishedDate">Published Date</h3>
           {{ book.publishedDate }}
-          <h3>Description</h3>
+          <h3 v-if="book.description">Description</h3>
           {{ book.description }}
         </div>
       </div>
@@ -45,12 +51,33 @@ export default Vue.extend({
       bookInput: "",
       book: {},
       getBookInfo: async () => {
-        this.disabled = true;
+        const button = document.getElementById("submit-button")
+        button.setAttribute("disabled", "true");
         this.book = await getBook(this.bookInput)
-        this.disabled = false;
         this.state = "info";
+        button.removeAttribute("disabled");
       }
     }
   },
 })
 </script>
+
+<style lang="scss" scoped>
+.book-info {
+  align-items: center;
+  text-align: center;
+}
+
+.book-input {
+  width: 20rem;
+}
+
+.info-heading {
+  color: yellowgreen;
+}
+
+input[type='text'],
+textarea {
+  background-color: blueviolet;
+}
+</style>
