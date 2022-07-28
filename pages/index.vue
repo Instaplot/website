@@ -63,7 +63,6 @@ export default Vue.extend({
         button.setAttribute("disabled", "true");
         button.setAttribute("loading", "true");
         const book = await getBook(this.bookInput)
-        console.log(book);
         if (book === 1) {
           // eslint-disable-next-line no-unused-expressions, no-sequences
           this.$alert("The requested book coundnt be found.", "Book Not Found"), {
