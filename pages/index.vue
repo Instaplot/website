@@ -3,6 +3,13 @@
   <el-container>
     <el-main>
       <div class="book-info">
+        <el-alert
+          v-if="state === 'bookNotFound'"
+          type="error"
+          effect="dark"
+          title="The requested book was not found!"
+        ></el-alert>
+        <img src="@/static/icon.png" class="logo" />
         <h1 class="info-heading">Get information about books with ease</h1>
         <el-input
           v-model="bookInput"
@@ -10,6 +17,7 @@
           size="medium"
           resize="horizontal"
           class="book-input"
+          @keyup.enter.native="getBookInfo"
         >
         </el-input>
         <el-button id="submit-button" type="primary" @click="getBookInfo"
@@ -53,18 +61,42 @@ export default Vue.extend({
       getBookInfo: async () => {
         const button = document.getElementById("submit-button")
         button.setAttribute("disabled", "true");
-        this.book = await getBook(this.bookInput)
+        button.setAttribute("loading", "true");
+        const book = await getBook(this.bookInput)
+        console.log(book);
+        if (book === 1) {
+          // eslint-disable-next-line no-unused-expressions, no-sequences
+          this.$alert("The requested book coundnt be found.", "Book Not Found"), {
+            confirmButtonText: "OK",
+            callback: action => {
+              this.$message({type: "error", message: `action: ${ action }`});
+            }
+          }
+          button.removeAttribute("loading");
+          button.removeAttribute("disabled");
+          return;
+        }
+        this.book = book;
         this.state = "info";
+        button.removeAttribute("loading");
         button.removeAttribute("disabled");
       }
     }
   },
+
+  head() {
+    return {
+      script: [
+        {src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9543552468075237", crossorigin: "anonymous"}
+      ]
+    }
+  }
+
 })
 </script>
 
 <style lang="scss" scoped>
 .book-info {
-  align-items: center;
   text-align: center;
 }
 
@@ -76,8 +108,9 @@ export default Vue.extend({
   color: yellowgreen;
 }
 
-input[type='text'],
-textarea {
-  background-color: blueviolet;
+.logo {
+  position: relative;
+  width: 8rem;
+  right: 1rem;
 }
 </style>
