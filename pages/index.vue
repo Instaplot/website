@@ -81,16 +81,7 @@ export default Vue.extend({
         button.removeAttribute("disabled");
       }
     }
-  },
-
-  head() {
-    return {
-      script: [
-        {src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9543552468075237", crossorigin: "anonymous"}
-      ]
-    }
   }
-
 })
 </script>
 
