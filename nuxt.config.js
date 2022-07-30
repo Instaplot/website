@@ -37,6 +37,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/google-adsense',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -59,5 +60,9 @@ export default {
 
   styleResources: {
     scss: ['@/assets/scss/mixins.scss', '@/assets/scss/variables.scss'],
+  },
+
+  'google-adsense': {
+    id: 'ca-pub-2938409993181102',
   },
 }
