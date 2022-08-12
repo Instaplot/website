@@ -71,4 +71,10 @@ export default {
     'User-Agent': '*',
     Allow: '/',
   },
+  sitemap: {
+    hostname: 'https://instaplot-fire.web.app',
+    gzip: true,
+    exclude: [],
+    routes: ['/'],
+  },
 }
