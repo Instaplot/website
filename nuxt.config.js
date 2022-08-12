@@ -39,6 +39,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/google-adsense',
     '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
