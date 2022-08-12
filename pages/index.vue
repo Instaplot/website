@@ -1,58 +1,53 @@
 <!-- eslint-disable vue/require-v-for-key -->
 <template>
   <el-container>
-    <el-aside width="200px">
-      <adsbygoogle />
-    </el-aside>
-    <el-container>
-      <el-header> Instaplot </el-header>
-      <el-main>
-        <div class="book-info">
-          <el-alert
-            v-if="state === 'bookNotFound'"
-            type="error"
-            effect="dark"
-            title="The requested book was not found!"
-          ></el-alert>
-          <img src="@/static/icon.png" class="logo" />
-          <h1 class="info-heading">Get information about books with ease</h1>
-          <el-input
-            v-model="bookInput"
-            type="text"
-            size="medium"
-            resize="horizontal"
-            class="book-input"
-            @keyup.enter.native="getBookInfo"
-          >
-          </el-input>
-          <el-button id="submit-button" type="primary" @click="getBookInfo"
-            >Submit</el-button
-          >
-          <div v-if="state == 'info'">
-            <h3 v-if="book.title">Book Title</h3>
-            {{ book.title }}
-            <br />
-            <el-image
-              v-if="book.thumbnailURL"
-              :src="book.thumbnailURL"
-            ></el-image>
-            <h3 v-if="book.authors">Authors</h3>
-            <ul>
-              <li v-for="author in book.authors">{{ author }}</li>
-            </ul>
-            <h3 v-if="book.publisher">Publisher</h3>
-            {{ book.publisher }}
-            <h3 v-if="book.publishedDate">Published Date</h3>
-            {{ book.publishedDate }}
-            <h3 v-if="book.description">Description</h3>
-            {{ book.description }}
-          </div>
+    <el-header> Instaplot </el-header>
+    <el-main>
+      <div class="book-info">
+        <el-alert
+          v-if="state === 'bookNotFound'"
+          type="error"
+          effect="dark"
+          title="The requested book was not found!"
+        ></el-alert>
+        <img src="@/static/icon.png" class="logo" />
+        <h1 class="info-heading">Get information about books with ease</h1>
+        <el-input
+          v-model="bookInput"
+          type="text"
+          size="medium"
+          resize="horizontal"
+          class="book-input"
+          @keyup.enter.native="getBookInfo"
+        >
+        </el-input>
+        <el-button id="submit-button" type="primary" @click="getBookInfo"
+          >Submit</el-button
+        >
+        <div v-if="state == 'info'">
+          <h3 v-if="book.title">Book Title</h3>
+          {{ book.title }}
+          <br />
+          <el-image
+            v-if="book.thumbnailURL"
+            :src="book.thumbnailURL"
+          ></el-image>
+          <h3 v-if="book.authors">Authors</h3>
+          <ul>
+            <li v-for="author in book.authors">{{ author }}</li>
+          </ul>
+          <h3 v-if="book.publisher">Publisher</h3>
+          {{ book.publisher }}
+          <h3 v-if="book.publishedDate">Published Date</h3>
+          {{ book.publishedDate }}
+          <h3 v-if="book.description">Description</h3>
+          {{ book.description }}
         </div>
-      </el-main>
-      <el-footer>
-        <adsbygoogle />
-      </el-footer>
-    </el-container>
+      </div>
+    </el-main>
+    <el-footer>
+      <adsbygoogle />
+    </el-footer>
   </el-container>
 </template>
 

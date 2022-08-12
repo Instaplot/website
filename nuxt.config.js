@@ -38,6 +38,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/google-adsense',
+    '@nuxtjs/robots',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -64,5 +65,9 @@ export default {
 
   'google-adsense': {
     id: 'ca-pub-2938409993181102',
+  },
+  robots: {
+    'User-Agent': '*',
+    Allow: '/',
   },
 }
