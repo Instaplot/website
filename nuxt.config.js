@@ -71,11 +71,12 @@ export default {
   robots: {
     'User-Agent': '*',
     Allow: '/',
+    Sitemap: 'https://instaplot.netlify.app/sitemap.xml',
   },
   sitemap: {
-    hostname: 'https://instaplot-fire.web.app',
+    hostname: 'https://instaplot.netlify.app',
     gzip: true,
     exclude: [],
-    routes: ['/'],
+    routes: ['/', { url: '/', priority: 1 }],
   },
 }

@@ -87,12 +87,17 @@ export default Vue.extend({
     }
   },
   head: {
-    title: "Home - Instaplot",
+    title: "Instaplot",
     meta: [
       {
-        hid: "Get information about books with ease",
-        name: "Get information about books with ease",
-        content: "Get information about books with ease"
+        hid: 'description',
+        name: 'description',
+        content: 'Website to get information about books'
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'books, information, search, free, easy, website'
       }
     ]
   }
