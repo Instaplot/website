@@ -98,6 +98,11 @@ export default Vue.extend({
         hid: 'keywords',
         name: 'keywords',
         content: 'books, information, search, free, easy, website'
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'instaplot'
       }
     ]
   }
