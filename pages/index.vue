@@ -45,9 +45,6 @@
         </div>
       </div>
     </el-main>
-    <el-footer>
-      <adsbygoogle />
-    </el-footer>
   </el-container>
 </template>
 
