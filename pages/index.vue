@@ -1,7 +1,9 @@
 <!-- eslint-disable vue/require-v-for-key -->
 <template>
   <el-container>
-    <HeaderPage />
+    <el-header>
+      <HeaderPage />
+    </el-header>
     <el-main>
       <div class="book-info">
         <el-alert

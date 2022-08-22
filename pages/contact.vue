@@ -1,7 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <el-container>
-    <HeaderPage />
+    <el-header>
+      <HeaderPage />
+    </el-header>
     <el-main>
       <el-alert
         v-if="state === '429'"
