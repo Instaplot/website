@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/require-v-for-key -->
 <template>
   <el-container>
-    <el-header> Instaplot </el-header>
+    <HeaderPage />
     <el-main>
       <div class="book-info">
         <el-alert
