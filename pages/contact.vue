@@ -91,7 +91,7 @@ export default {
             'https://getform.io/f/7e13e905-e37a-4653-bc70-e70c5f73fb0f',
             this.contact
           )
-          // console.log(response);
+          alert('Submited')
         } catch (error) {
           const e = error.toString()
           if (e.includes('429')) {
