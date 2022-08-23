@@ -12,7 +12,11 @@
           effect="dark"
           title="The requested book was not found!"
         ></el-alert>
-        <img src="@/static/icon.png" class="logo" />
+        <nuxt-img
+          src="/icon.png"
+          class="logo"
+          sizes="sm:100vw md:50vw lg:400px"
+        />
         <h1 class="info-heading">Get information about books with ease</h1>
         <el-input
           v-model="bookInput"

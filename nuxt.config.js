@@ -30,6 +30,7 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/style-resources',
     '@nuxtjs/color-mode',
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
