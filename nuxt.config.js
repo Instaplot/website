@@ -77,6 +77,11 @@ export default {
     hostname: 'https://instaplot.netlify.app',
     gzip: true,
     exclude: [],
-    routes: ['/', { url: '/', priority: 1 }],
+    routes: [
+      '/',
+      { url: '/', priority: 1 },
+      '/contact',
+      { url: '/', priority: 1 },
+    ],
   },
 }
