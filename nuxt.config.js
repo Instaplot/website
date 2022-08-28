@@ -13,6 +13,13 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: 'https://umami-vaibhav.netlify.app/umami.js',
+        async: true,
+        'data-website-id': '1c4c395c-5913-4c1a-a628-469addf273a8',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
