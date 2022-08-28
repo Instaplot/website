@@ -105,6 +105,26 @@ export default {
       },
     }
   },
+  head: {
+    title: 'Contact | Instaplot',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Contact page of Instaplot',
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'books, search, free, contact, website, page',
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'Contact | Instaplot',
+      },
+    ],
+  },
 }
 </script>
 
