@@ -46,7 +46,6 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    '@nuxtjs/google-adsense',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
   ],
@@ -73,9 +72,6 @@ export default {
     scss: ['@/assets/scss/mixins.scss', '@/assets/scss/variables.scss'],
   },
 
-  'google-adsense': {
-    id: 'ca-pub-2938409993181102',
-  },
   robots: {
     'User-Agent': '*',
     Allow: '/',
