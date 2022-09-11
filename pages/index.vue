@@ -50,6 +50,18 @@
           {{ book.description }}
         </div>
       </div>
+      <div v-if="allowAds">
+        <script
+          async="async"
+          data-cfasync="false"
+          src="//pl17695264.profitablegatetocontent.com/91460dac0ef7119861e1a676c24940a1/invoke.js"
+        ></script>
+        <div id="container-91460dac0ef7119861e1a676c24940a1"></div>
+        <script
+          type="text/javascript"
+          src="//pl17695220.profitablegatetocontent.com/bb/5b/88/bb5b889b06ba211190c1906d5ae0f667.js"
+        ></script>
+      </div>
     </el-main>
   </el-container>
 </template>
@@ -65,6 +77,7 @@ export default Vue.extend({
       state: "default",
       bookInput: "",
       book: {},
+      allowAds: true,
       getBookInfo: async () => {
         const button = document.getElementById("submit-button")
         button.setAttribute("disabled", "true");
