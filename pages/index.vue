@@ -77,7 +77,7 @@ export default Vue.extend({
       state: "default",
       bookInput: "",
       book: {},
-      allowAds: true,
+      allowAds: false,
       getBookInfo: async () => {
         const button = document.getElementById("submit-button")
         button.setAttribute("disabled", "true");
@@ -120,7 +120,7 @@ export default Vue.extend({
         name: 'og:title',
         content: 'instaplot'
       }
-    ]
+    ],
   }
 })
 </script>
