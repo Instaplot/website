@@ -48,6 +48,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
+    '@nuxtjs/google-adsense',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -87,5 +88,9 @@ export default {
       '/contact',
       { url: '/', priority: 1 },
     ],
+  },
+  'google-adsense': {
+    id: 'ca-pub-2938409993181102',
+    onPageLoad: true,
   },
 }
